@@ -13,7 +13,6 @@ pub enum direction{
 pub struct Coord{
     pub x: usize,
     pub y: usize,
-    pub dir: direction
 }
 
 #[derive(Debug, Default, Clone)]
