@@ -69,3 +69,6 @@ pub fn convert_str_to_vec(input_string: String) -> Vec<String>{
 pub fn convert_str_to_matrix(input_string: String) -> Vec<Vec<char>>{
     input_string.split("\n").map(|row| row.to_owned().chars().collect()).collect()
 }
+pub fn convert_str_to_matrix_val(input_string: String) -> Vec<Vec<u32>>{
+    input_string.split("\n").map(|row| row.to_owned().chars().map(|val| val.to_digit(10).unwrap()).collect()).collect()
+}
