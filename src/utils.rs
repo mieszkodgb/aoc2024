@@ -58,8 +58,8 @@ pub fn read_file(filename: &str) -> String {
 }
 
 
-pub fn convert_str_to_vec(input_string: String) -> Vec<String>{
-    let mut input: Vec<String> = input_string.split("\n").map(|row| row.to_owned()).collect();
+pub fn convert_str_to_vec(input_string: String, separator: &'static str) -> Vec<String>{
+    let mut input: Vec<String> = input_string.split(separator).map(|row| row.to_owned()).collect();
     if input.last().unwrap() == ""{
         input.pop();
     }
