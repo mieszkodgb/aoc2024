@@ -12,17 +12,18 @@ mod utils;
 // mod day_10;
 // mod day_12;
 // mod day_14;
-mod day_15;
+// mod day_15;
+mod day_19;
 
 #[tokio::main]
 async fn main() -> (){ //Box<dyn Error>>
-    let day = "15";
+    let day = "19";
     let year = "2024";
     let cookie = "53616c7465645f5f8314147db14eb79bcc737912132b1bb1f13c6e013f0f8deff934838c8f947722ec154ce0dc2d3794d3daf8c94b3a1f1d0cc9cc1f1dc16184";
     let http_api= format!("https://adventofcode.com/{year}/day/{day}/input");
 
-    // let res = utils::read_api(&http_api, &cookie).await;
-    let res = utils::read_file("dummy_input.txt");
+    let res = utils::read_api(&http_api, &cookie).await;
+    // let res = utils::read_file("dummy_input.txt");
 
     // let res = res[..res.len()-1].to_owned();
     let mut res = utils::convert_str_to_vec(res, "\n");
@@ -38,5 +39,5 @@ async fn main() -> (){ //Box<dyn Error>>
     // day_11::part_one(&res);
     // day_13::part_one(res.clone());
 
-    day_15::part_two(res);
+    day_19::part_two(res);
 }
